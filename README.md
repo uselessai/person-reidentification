@@ -99,6 +99,20 @@ After obtaining the cosine distance of all the images, they are sorted and the o
 
 
 
+| Método | Market-1501 FID | Referencia |
+| --- | --- | --- |
+| **Real** | **7.22** | Hao Chen *et al.*~\cite{Chen2020} |
+| IS-GAN | 281.63 | Hao Chen *et al.*~\cite{Chen2020} |
+| FD-GAN | 257.00 | Saleh Hussin *et al.*~\cite{Hussin2021} |
+| PG-GAN | 151.16 | Zhedong Zheng *et al.*~\cite{Zheng2019} |
+| DCGAN | 136.26 | Saleh Hussin *et al.*~\cite{Hussin2021} |
+| LSGAN | 136.26 | Zhedong Zheng *et al.*~\cite{Zheng2019} |
+| PN-GAN | 54.23 | Zhedong Zheng *et al.*~\cite{Zheng2019} |
+| GCL | 53.07 | Hao Chen *et al.*~\cite{Chen2020} |
+| DG-Net | 18.24 | Hao Chen *et al.*~\cite{Chen2020} |
+| DG-GAN | 18.24 | Saleh Hussin *et al.*~\cite{Hussin2021} |
+| **StyleGAN3** | **9.29** | |
+
 
 
 ## Usage
