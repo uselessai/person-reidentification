@@ -117,7 +117,7 @@ Transfer learning was performed, and it was re-trained with 51,247 images from t
 ## Additional material
 
 - [Stylegan3 project](https://github.com/NVlabs/stylegan3)
-- [Stylegan3 Model trained with Market 1506] (https://github.com/NVlabs/stylegan3)
+- [Stylegan3 Model trained with Market 1506](https://github.com/NVlabs/stylegan3)
 
 
 
