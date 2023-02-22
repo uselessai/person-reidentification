@@ -123,7 +123,9 @@ Transfer learning was performed, and it was re-trained with 51,247 images from t
 ## Material
 
 - [Stylegan3 project](https://github.com/NVlabs/stylegan3)
-- [Stylegan3 Model trained with Market 1506](https://github.com/NVlabs/stylegan3)
+- [Stylegan3 Model trained with Market-1501 database](https://drive.google.com/file/d/1Ep-CfJBAcOF6dm7EXBjRkRIW_r7_Xyk-/view?usp=share_link)
+- [Images of 432 artificial persons.](https://drive.google.com/file/d/1M1IcjEs5V8wjyPWAuKXQjUuZq8SUxJWi/view?usp=share_link)
+- [Artificial images of real people.](https://drive.google.com/file/d/17ALVdrY6vaOX2KvjgtYutoduR2Mvx4Ka/view?usp=share_link)
 
 
 
@@ -141,12 +143,11 @@ The Structural SIMilarity (SSIM) metric was used to measure the similarity betwe
 
 ## Material
 
-- [YoloV4 tiny](https://github.com/NVlabs/stylegan3)
-- [SSIM Filtering](https://github.com/NVlabs/stylegan3)
+- [YoloV4 tiny - Tutorial](https://data-flair.training/blogs/pedestrian-detection-python-opencv/)
+- [YoloV4 tiny - Code](./pedestrian_detector/)
+- [SSIM Filtering](./similitudSSIM.py)
 
 ## Results
-
-
 
 | Método | Market-1501 FID | Referencia |
 | --- | --- | --- |
@@ -162,7 +163,7 @@ The Structural SIMilarity (SSIM) metric was used to measure the similarity betwe
 | DG-GAN | 18.24 | Saleh Hussin *et al.*~\cite{Hussin2021} |
 | **StyleGAN3** | **9.29** | |
 
-**Tabla 3**: Comparative table of different adversarial generative networks, using the FID metric (59) and training all models with the Market-1501 dataset (2). The first row is the value obtained when applying the metric to real images in the dataset.
+**Tabla 3**: Comparative table of different adversarial generative networks, using the FID metric and training all models with the Market-1501 dataset. The first row is the value obtained when applying the metric to real images in the dataset.
 
 
 
