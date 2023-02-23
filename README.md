@@ -164,16 +164,17 @@ Transfer learning was performed, and it was re-trained with 51,247 images from t
 **Tabla 2**: Technical data for Stylegan3 training for the generation of artificial images. Model, number of images used for training, training duration, and graphics card used.
 
 ![Stylegan3 FID](./docs/Stylegan3-FID.png)
+
 **IMAGE **: The evolution of the model's performance through the FID metric at different epochs of Stylegan3 training.
 
 
 ![Random images Stylegan3](./docs/imagenes_generadas_aleatorias_stylegan3.png)
+
 **IMAGE **: Quality of the StyleGAN3 model to generate artificial images compared to real ones.
 
 
 
-![System architecture](./docs/imagenes_generadas_aleatorias_stylegan3.png)
-**IMAGE **: Quality of the StyleGAN3 model to generate artificial images compared to real ones.
+
 
 
 ## Table
@@ -230,6 +231,7 @@ The Structural SIMilarity (SSIM) metric was used to measure the similarity betwe
 
 
 ![Reals VS Fakes](./docs/Reals-VS-Fakes.png)
+
 **IMAGE **: A) Real images from the Market-1501 database. B) Artificial images.
 
 
@@ -256,10 +258,12 @@ During the experimentation, 401 artificial person images were randomly generated
 **IMAGE **: Seed - the randomly generated image that will have its latent vectors modified to alter its medium features. Generated - the images that have been created by modifying the latent vectors of the seed image.
 
 ![imagenesdescartadasYolo](./docs/imagenesdescartadasYolo.png)
-**IMAGE **: Example of some discarded images using the Yolo V4 tiny model for pedestrian detection.
+
+**IMAGE**: Example of some discarded images using the Yolo V4 tiny model for pedestrian detection.
 
 ![imagenesdescartadasYolo](./docs/imagenesdescartadasSSIM.png)
-**IMAGE **: Example of some discarded images using the SSIM metric. Starting with one of the images of a person (original image), it is compared to the rest of the generated images of that same person.
+
+**IMAGE**: Example of some discarded images using the SSIM metric. Starting with one of the images of a person (original image), it is compared to the rest of the generated images of that same person.
 
 
 
@@ -302,7 +306,7 @@ The next thing to observe is that the learning is smoother and it can be seen th
 
 Using the model generated in epoch 220,000, latent vectors representing the input images were obtained. The resulting images resemble the target images, but the quality is not as high as the images generated in the previous step.
 
-![generadas_personas_nuevas](./docs/inference_comparacion_low.png)
+![generadas_personas_nuevas](/docs/inference_comparacion_low.png)
 **IMAGE**: The real image is on the right, and its counterpart obtained through the encoder within the latent space of StyleGAN3 is on the left. It can be observed that the model performs better when the full body is shown, but it does not reach the quality of images generated randomly.
 
 
@@ -331,11 +335,10 @@ After generating the latent vector, variants of that person in different poses w
 - Training code. python ./inversion/scripts/train_restyle_psp.py --dataset_type market_encode  --encoder_type ResNetBackboneEncoder  --exp_dir experiments/restyle_psp_ffhq_encode_market  --batch_size 2  --test_batch_size 2  --workers 8  --test_workers 8  --val_interval 5000  --save_interval 10000  --start_from_latent_avg True  --lpips_lambda 0.8  --l2_lambda 1  --id_lambda 0.1  --input_nc 6  --n_iters_per_batch 3  --output_size 64  --stylegan_weights ./network-snapshot-002160Stylegan3.pt
 - [Stylegan3 decoder model](https://drive.google.com/file/d/1jEdVOdGpz08WEkck38T-_I3QsC3lsaBq/view?usp=share_link)
 - [Artificial images of real people.](https://drive.google.com/file/d/17ALVdrY6vaOX2KvjgtYutoduR2Mvx4Ka/view?usp=share_link)
-
-  - Archivos colab
-https://colab.research.google.com/drive/18_t0YdYi_QtL1iZjgwD_XjWRt_2TyMzA?authuser=1
+- Google colab
+  * https://colab.research.google.com/drive/18_t0YdYi_QtL1iZjgwD_XjWRt_2TyMzA?authuser=1
   * Convert PKL Stylegan3 to PT compatible with Stylegan3 decoder
-https://colab.research.google.com/drive/1vPF7zz8Rsc6D8_TBUFDRxsslHagebmr9?authuser=1
+  * https://colab.research.google.com/drive/1vPF7zz8Rsc6D8_TBUFDRxsslHagebmr9?authuser=1
 
 ## Re-identification
 
