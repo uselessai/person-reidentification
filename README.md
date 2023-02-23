@@ -452,6 +452,7 @@ Similarly to the previous section, during training it can be observed that the m
 
 
 ![graficarendimientore_idconimageespersonasreales](./docs/graficarendimientore_idconimageespersonasreales.png)
+
 **IMAGE**: Performance of some models trained with different numbers of artificial images per person. Adding 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, and 120 images per person.
 
 
