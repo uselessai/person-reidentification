@@ -147,9 +147,8 @@ The next table shows the training characteristics of StyleGAN3.
 |---------|----------|-----------|-----------|----------|----------|-------------|
 | stylegan3-r | 1 | 16 | 2 | 5000 | 20 | fid50k_full |
 
-**Tabla 1**: Hyperparameters used during the training of Stylegan3. The parameter cfg (stylegan3-r) is used to determine the type of training config R or rotation equivalent, which prevents the deterioration of the FID metric measurement if the generated images are rotated or moved. It was trained on a GPU. batch (16) is the number of images that are fed into the network at each training iteration. gamma (2) is the R1 regularization weight, which indicates how fast the weights are updated. kimg (5000) is the total duration of the training. snap (20) indicates how often the model is saved, in this case, every 80,000 images. metrics (fid50k_full) is the metric used to measure the performance of the model during training.
+*Table: Hyperparameters used during the training of Stylegan3. The parameter cfg (stylegan3-r) is used to determine the type of training config R or rotation equivalent, which prevents the deterioration of the FID metric measurement if the generated images are rotated or moved. It was trained on a GPU. batch (16) is the number of images that are fed into the network at each training iteration. gamma (2) is the R1 regularization weight, which indicates how fast the weights are updated. kimg (5000) is the total duration of the training. snap (20) indicates how often the model is saved, in this case, every 80,000 images. metrics (fid50k_full) is the metric used to measure the performance of the model during training.*
 
-**Parameters**: python train.py --outdir=~/training-runs/2022 --cfg=stylegan3-r --data=./datasets/market_FULL50KIMGs.zip --gpus=1 --batch=16 --gamma=2  --kimg=5000 --snap=20 --metrics=fid50k_full --resume=https://api.ngc.nvidia.com/v2/models/nvidia/research/stylegan3/versions/1/files/stylegan3-r-afhqv2-512x512.pkl
 
 
 Transfer learning was performed, and it was re-trained with 51,247 images from the Market-1501 database. The hyperparameters used, and training performance was measured using the Fréchet Inception Distance (FID) metric. This metric is applied to both the generated and real images, and the more similar the values of both are, the better the image generation. The performance of StyleGAN3 is much better than that of other generative adversarial networks trained with the same database. 
@@ -160,17 +159,14 @@ Transfer learning was performed, and it was re-trained with 51,247 images from t
 | Model | Training Images | Test Images | Training Duration | Hardware |
 |--------|--------------------|--------------|---------------|----------|
 | Stylegan3 | 51247 | Not applicable | 2d 08h 24m | Titan RTX |
-
-**Tabla 2**: Technical data for Stylegan3 training for the generation of artificial images. Model, number of images used for training, training duration, and graphics card used.
+*Table: Technical data for Stylegan3 training for the generation of artificial images. Model, number of images used for training, training duration, and graphics card used.*
 
 ![Stylegan3 FID](./docs/Stylegan3-FID.png)
-
-**IMAGE **: The evolution of the model's performance through the FID metric at different epochs of Stylegan3 training.
+**IMAGE**: The evolution of the model's performance through the FID metric at different epochs of Stylegan3 training.
 
 
 ![Random images Stylegan3](./docs/imagenes_generadas_aleatorias_stylegan3.png)
-
-**IMAGE **: Quality of the StyleGAN3 model to generate artificial images compared to real ones.
+**IMAGE**: Quality of the StyleGAN3 model to generate artificial images compared to real ones.
 
 
 
@@ -184,7 +180,6 @@ Transfer learning was performed, and it was re-trained with 51,247 images from t
 | Fine | (12,13,14,15) | ![fine Characteristics](./docs/caracteristicas_suaves.png) |
 | Medium | (5,6,7,8,9,10,11) | ![medium Characteristics](./docs/caracteristicas_medias.png) |
 | Coarse | (0,1,2,3,4,5) | ![coarse Characteristics](./docs/caracteristicas_duras.png) |
-
 *Table. Layers used to generate new images of the same person depending on the modification of their fine, medium, or coarse features.*
 
 
@@ -195,6 +190,7 @@ Transfer learning was performed, and it was re-trained with 51,247 images from t
 
 - [Stylegan3 project](https://github.com/NVlabs/stylegan3)
 - [Stylegan3 Model trained with Market-1501 database](https://drive.google.com/file/d/1Ep-CfJBAcOF6dm7EXBjRkRIW_r7_Xyk-/view?usp=share_link)
+- **Parameters**: python train.py --outdir=~/training-runs/2022 --cfg=stylegan3-r --data=./datasets/market_FULL50KIMGs.zip --gpus=1 --batch=16 --gamma=2  --kimg=5000 --snap=20 --metrics=fid50k_full --resume=https://api.ngc.nvidia.com/v2/models/nvidia/research/stylegan3/versions/1/files/stylegan3-r-afhqv2-512x512.pkl
 
 
 ### Filtering images
@@ -226,13 +222,11 @@ The Structural SIMilarity (SSIM) metric was used to measure the similarity betwe
 | DG-Net | 18.24 | Hao Chen *et al.* |
 | DG-GAN | 18.24 | Saleh Hussin *et al.* |
 | **StyleGAN3** | **9.29** | |
-
-**Table 3**: Comparative table of different adversarial generative networks, using the FID metric and training all models with the Market-1501 dataset. The first row is the value obtained when applying the metric to real images in the dataset.
+*Table: Comparative table of different adversarial generative networks, using the FID metric and training all models with the Market-1501 dataset. The first row is the value obtained when applying the metric to real images in the dataset.*
 
 
 ![Reals VS Fakes](./docs/Reals-VS-Fakes.png)
-
-**IMAGE **: A) Real images from the Market-1501 database. B) Artificial images.
+**IMAGE**: A) Real images from the Market-1501 database. B) Artificial images.
 
 
 ## Material
@@ -245,24 +239,21 @@ The Structural SIMilarity (SSIM) metric was used to measure the similarity betwe
 
 During the experimentation, 401 artificial person images were randomly generated, and 51 images per person were generated by modifying their latent vectors in different postures, resulting in a total of 20,451 images (see Fig. 5.6). The Yolo V4 filter was applied to the generated images to detect pedestrians, and 3,419 images representing 16.7% of the total were eliminated. Different examples of filtered images are shown in image below. The SSIM filter was then applied, and 386 images, representing 2.3% of the total, were discarded.  Once the filters were applied, a total of 3,815 images were discarded.
 
-| Método                                            | Imgs. descartadas | %   |
+| Method                                            | Discarded images | %   |
 | -------------------------------------------------- | ---------------- | --- |
 | Yolov4-tiny pedestrian detection (Jiang et al.,2020)| 3,419            | 16.7|
 | SSIM (Wang et al., 2004)                           | 396              | 2.3 |
 | **TOTAL**                                         | **3,815**        | **18.6** |
-
-**Tabla 4**: Number of discarded images during the application of different filters.
+*Tabla: Number of discarded images during the application of different filters.*
 
 
 ![generadas_personas_nuevas](./docs/generadas_personas_nuevas.png)
-**IMAGE **: Seed - the randomly generated image that will have its latent vectors modified to alter its medium features. Generated - the images that have been created by modifying the latent vectors of the seed image.
+**IMAGE**: Seed - the randomly generated image that will have its latent vectors modified to alter its medium features. Generated - the images that have been created by modifying the latent vectors of the seed image.
 
 ![imagenesdescartadasYolo](./docs/imagenesdescartadasYolo.png)
-
 **IMAGE**: Example of some discarded images using the Yolo V4 tiny model for pedestrian detection.
 
-![imagenesdescartadasYolo](./docs/imagenesdescartadasSSIM.png)
-
+![imagenesdescartadasSSIM](./docs/imagenesdescartadasSSIM.png)
 **IMAGE**: Example of some discarded images using the SSIM metric. Starting with one of the images of a person (original image), it is compared to the rest of the generated images of that same person.
 
 
@@ -284,7 +275,7 @@ Using the model generated at epoch 220,000, the latent vectors representing the 
 | ------------------ | ----------------- | -------------- | ------------- | -------- | -------- |
 | stylegan3-editing  | 39466             | 732            | 3d 03h 16m    | 240.000  | Titan RTX|
 
-**Tabla 5**: Technical data of the training of the model for artificial image generation.
+**Table**: Technical data of the training of the model for artificial image generation.
 
 
 To measure the performance of the model during training, three different loss functions were used: Perceptual Similarity Metric (LPIPS), L2, and Momentum Contrast(MOCO). During the training he loss functions fluctuate in different epochs. This may be due to the fact that this architecture is designed to work with simpler databases, such as faces, where images are not as complex as a full body of a person in different poses.
@@ -294,11 +285,11 @@ The next thing to observe is that the learning is smoother and it can be seen th
 
 ## Table
 
-| ![LPIPS](/docs/train_loss_lpips.png) | ![L2](/docs/train_loss_l2.png) |
+| ![LPIPS](./docs/train_loss_lpips.png) | ![L2](./docs/train_loss_l2.png) |
 | :---: | :---: |
 | Figure 1. LPIPS | Figure 2. L2 |
 
-| ![MOCO](/docs/train_loss_moco.png) |
+| ![MOCO](./docs/train_loss_moco.png) |
 | :---: |
 | Figure 3. MOCO |
 *Table. Evolution of the loss functions during training up to epoch 220,000.*
@@ -306,7 +297,7 @@ The next thing to observe is that the learning is smoother and it can be seen th
 
 Using the model generated in epoch 220,000, latent vectors representing the input images were obtained. The resulting images resemble the target images, but the quality is not as high as the images generated in the previous step.
 
-![generadas_personas_nuevas](/docs/inference_comparacion_low.png)
+![inference_comparacion_low](./docs/inference_comparacion_low.png)
 **IMAGE**: The real image is on the right, and its counterpart obtained through the encoder within the latent space of StyleGAN3 is on the left. It can be observed that the model performs better when the full body is shown, but it does not reach the quality of images generated randomly.
 
 
@@ -321,7 +312,7 @@ After generating the latent vector, variants of that person in different poses w
 
 *Table: Number of discarded images during the application of different filters.*
 
-![generadas_personas_nuevas](./docs/latentes_personas_originales.png)
+![latentes_personas_originales](./docs/latentes_personas_originales.png)
 **IMAGE**: Seed - real image. Generated - the images that have been generated by modifying the latent vectors of the seed image..
 
 
@@ -360,11 +351,11 @@ During training, it can be observed that the model stabilizes from epoch 40 onwa
 
 ## Table
 
-| ![generadas_personas_nuevas](./docs/train_resnet_01.jpg) |
+| ![train_resnet_01](./docs/train_resnet_01.jpg) |
 |:--:|
 | Base, without added persons. **Left**, loss function during training and validation. **Right**, Rank1 error percentage during training and validation.|
 
-| ![generadas_personas_nuevas](./docs/train_resnet_03.jpg)   |
+| ![train_resnet_03](./docs/train_resnet_03.jpg)   |
 |:--:|
 | Adding 100 people. **Left**, loss function during training and validation. **Right**, Rank1 error percentage during training and validation.. |
 
@@ -393,12 +384,12 @@ During training, it can be observed that the model stabilizes from epoch 40 onwa
 *Table: Training results with different number of added people. The first row is the base, without adding any images.*
 
 
-![generadas_personas_nuevas](./docs/grafica280.jpg)
+![grafica280](./docs/grafica280.jpg)
 **IMAGE**: Performance of some models trained with different numbers of artificially generated people. Adding 0, 40, 80, 120, 160, 200, 240, 280, and 320 people.
 
 
 
-![generadas_personas_nuevas](./docs/compara280vspytorch.jpg)
+![compara280vspytorch](./docs/compara280vspytorch.jpg)
 **IMAGE**: Results of the re-identification model. Comparison of results with the base model and the model after adding 280 people. Query is the image of the person being searched for, and the following images represent the output of the model, with green indicating a correct match and red indicating an error.
 
 
@@ -416,11 +407,11 @@ Similarly to the previous section, during training it can be observed that the m
 
 ## Table
 
-| ![generadas_personas_nuevas](./docs/train_resnet_01.jpg) |
+| ![train_resnet_01](./docs/train_resnet_01.jpg) |
 |:--:|
 | Base, without added persons. **Left**, loss function during training and validation. **Right**, Rank1 error percentage during training and validation.|
 
-| ![generadas_personas_nuevas](./docs/train07.jpg)   |
+| ![train07](./docs/train07.jpg)   |
 |:--:|
 | Adding 100 people. **Left**, loss function during training and validation. **Right**, Rank1 error percentage during training and validation.. |
 
@@ -447,7 +438,7 @@ Similarly to the previous section, during training it can be observed that the m
 *Table: Training results by adding a different number of individuals. The first row represents the baseline, without adding any image.*
 
 
-![generadas_personas_nuevas](./docs/graficarendimientore_idconimageespersonasreales.jpg)
+![graficarendimientore_idconimageespersonasreales](./docs/graficarendimientore_idconimageespersonasreales.jpg)
 **IMAGE**: Performance of some models trained with different numbers of artificial images per person. Adding 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, and 120 images per person.
 
 
