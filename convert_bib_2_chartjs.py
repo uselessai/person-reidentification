@@ -1,15 +1,15 @@
 import bibtexparser
 
 # Abre el archivo .bib y lo lee
-with open(r'F:\Personal\2020\UADY\Tesis\Codigo\01ComisionEuropea\bib\Tesis-Seminario-Articulo-00Reviews-GAN-ReID.bib', 'r', encoding='utf8') as bibtex_file:
+with open(r'path\Tesis-Seminario-Articulo-00Reviews-GAN-ReID.bib', 'r', encoding='utf8') as bibtex_file:
     bib_database_reviews = bibtexparser.load(bibtex_file)
-with open(r'F:\Personal\2020\UADY\Tesis\Codigo\01ComisionEuropea\bib\Tesis-Seminario-Articulo-01Articulaciones.bib', 'r', encoding='utf8') as bibtex_file:
+with open(r'path\Tesis-Seminario-Articulo-01Articulaciones.bib', 'r', encoding='utf8') as bibtex_file:
     bib_database_articulaciones = bibtexparser.load(bibtex_file)
 
-with open(r'F:\Personal\2020\UADY\Tesis\Codigo\01ComisionEuropea\bib\Tesis-Seminario-Articulo-01TransferStyle.bib', 'r', encoding='utf8') as bibtex_file:
+with open(r'path\Tesis-Seminario-Articulo-01TransferStyle.bib', 'r', encoding='utf8') as bibtex_file:
     bib_database_transfer = bibtexparser.load(bibtex_file)
 
-with open(r'F:\Personal\2020\UADY\Tesis\Codigo\01ComisionEuropea\bib\Tesis-Seminario-Articulo-01Aleatorios.bib', 'r', encoding='utf8') as bibtex_file:
+with open(r'path\Tesis-Seminario-Articulo-01Aleatorios.bib', 'r', encoding='utf8') as bibtex_file:
     bib_database_random = bibtexparser.load(bibtex_file)
 
  
@@ -20,7 +20,7 @@ with open(r'F:\Personal\2020\UADY\Tesis\Codigo\01ComisionEuropea\bib\Tesis-Semin
 def escribir_archivo(entries, backgroundColor, data, textColor):
    
 
-    with open(r'F:\Personal\2020\UADY\Tesis\Codigo\01ComisionEuropea\bib\dataset.txt', "a") as text_file:
+    with open(r'path\dataset.txt', "a") as text_file:
         # Extrae la información de los campos que quieres
       
 
@@ -97,7 +97,7 @@ def entries_anios(anio):
         
 
 
-    with open(r'F:\Personal\2020\UADY\Tesis\Codigo\01ComisionEuropea\bib\dataset.txt', "a") as text_file:
+    with open(r'path\dataset.txt', "a") as text_file:
         text_file.write("[" + "\n")
 
     escribir_archivo(entries_transfer_anio , background , "5", color_transfer)
@@ -106,13 +106,13 @@ def entries_anios(anio):
     escribir_archivo(entries_reviews_anio , background , "5", color_reviews)
     
    
-    with open(r'F:\Personal\2020\UADY\Tesis\Codigo\01ComisionEuropea\bib\dataset.txt', "a") as text_file:
+    with open(r'path\dataset.txt', "a") as text_file:
         text_file.write("]," + "\n")
 
 
 
 
-with open(r'F:\Personal\2020\UADY\Tesis\Codigo\01ComisionEuropea\bib\dataset.txt', "w") as text_file:
+with open(r'path\dataset.txt', "w") as text_file:
     text_file.write("datasets: [" + "\n")
 
 entries_anios('2021')
@@ -125,5 +125,5 @@ entries_anios('2018')
 
 entries_anios('2017')
 
-with open(r'F:\Personal\2020\UADY\Tesis\Codigo\01ComisionEuropea\bib\dataset.txt', "a") as text_file:
+with open(r'path\dataset.txt', "a") as text_file:
     text_file.write("]" + "\n")
