@@ -131,8 +131,8 @@ Cosine distance is a measure of similarity between two vectors in a vector space
 After obtaining the cosine distance of all the images, they are sorted and the ones with the smallest cosine distance will be the ones that are closest to the original image, meaning that they have been detected as images of the same person.
 
 ### System architecture
-![System architecture](./docs/arquitectura_portrait.png)
-
+![System architecture img](./docs/arquitectura_portrait_generacionimgs.png)
+![System architecture reid](./docs/arquitectura_portrait_re_identification.png)
 
 
 ## Experimental Results
