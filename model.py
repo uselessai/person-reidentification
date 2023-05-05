@@ -7,6 +7,23 @@ import pretrainedmodels
 import timm
 from utils import load_state_dict_mute
 ######################################################################
+#The code is a Python script that defines a neural network model based on ResNet50 architecture for image classification. 
+#It also defines helper functions for initializing weights and dropout, and a class for a custom classification layer. 
+#The script imports various modules including PyTorch, torchvision, pretrainedmodels, and timm. 
+#The load_state_dict_mute function is also imported from a user-defined module named utils. 
+#The weights_init_kaiming function initializes the weights of convolutional and linear layers using the He Kaiming initialization scheme.
+#The weights_init_classifier function initializes the weights of the last linear layer in the classification layer using a normal distribution with a small standard deviation. 
+#The activate_drop function sets the dropout rate to 0.1 for all dropout layers in the model. 
+#The ClassBlock class defines a custom classification layer that consists of a fully connected layer with 512 units, batch normalization, ReLU activation, and dropout. 
+#It also defines another fully connected layer that outputs the classification scores. 
+#The forward method of this class applies the layers in sequence on the input tensor and returns either the classification scores or a list containing the scores and the feature tensor.
+#The ft_net class defines the ResNet50-based model with a custom classification layer.
+#It first loads the ResNet50 model pretrained on ImageNet and replaces the average pooling layer with an adaptive average pooling layer.
+#It then defines a ClassBlock instance with the specified parameters and assigns it to the classifier attribute of the model. 
+#The forward method of this class applies the ResNet50 layers and the custom classification layers on the input tensor and returns the classification scores. 
+#The script also includes a simple main function that creates an instance of the ft_net class, removes the custom classification layer, and passes a random input tensor through the model to check its output shape. 
+#The code is intended to be used for training and evaluating image classification models on large-scale datasets such as Market-1501 and DukeMTMC-reID.
+######################################################################
 def weights_init_kaiming(m):
     classname = m.__class__.__name__
     # print(classname)
