@@ -341,7 +341,7 @@ After generating the latent vector, variants of that person in different poses w
 - [Artificial images of real people.](https://drive.google.com/file/d/17ALVdrY6vaOX2KvjgtYutoduR2Mvx4Ka/view?usp=share_link)
 - Google colab
   * https://colab.research.google.com/drive/18_t0YdYi_QtL1iZjgwD_XjWRt_2TyMzA?authuser=1
-  * Convert PKL Stylegan3 to PT compatible with Stylegan3 decoder
+  * Convert PKL Stylegan3 to PT compatible with Stylegan3 decoder https://colab.research.google.com/drive/1vPF7zz8Rsc6D8_TBUFDRxsslHagebmr9?authuser=1&hl=es
   * https://colab.research.google.com/drive/1vPF7zz8Rsc6D8_TBUFDRxsslHagebmr9?authuser=1
 
 ## Re-identification
